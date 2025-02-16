@@ -38,7 +38,7 @@ function calculateIMC(person) {
 
 const person = {
     name: 'Henrique',
-    weight: 85,
+    weight: 84.5,
     height: 168,
 }
 
