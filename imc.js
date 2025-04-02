@@ -1,18 +1,18 @@
 const conversionFactor = 0.01;
 
+const IMC_STATUS_DICT ={
+    Underweight: 'Underweight',
+    Regular: 'Regular',
+    Overweight: 'Overweight',
+    Obesity: 'Obesity',
+}
 function getClassificationDetail(classification) {
-    switch (classification) {
-        case 'Underweight':
-            return 'Abaixo do peso'
-        case 'Regular':
-            return 'Peso normal'
-        case 'Overweight':
-            return 'Acima do peso'  
-        case 'Obesity':
-            return 'Obesidade'
-        default:
-            return 'Falha ao encontrar descrição status';                                  
-    }
+    return {
+       [IMC_STATUS_DICT.Underweight]: 'Abaixo do peso',
+       [IMC_STATUS_DICT.Regular]: 'Peso normal',
+       [IMC_STATUS_DICT.Overweight]: 'Acima do peso',
+       [IMC_STATUS_DICT.Obesity]: 'Obesidade',
+    }[classification] || 'Falha ao encontrar a descrição do status'
 }  
 
 function classificateIMC(imc) {
